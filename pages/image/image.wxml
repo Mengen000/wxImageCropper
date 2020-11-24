@@ -1,0 +1,23 @@
+<image src="{{cropOkImg}}" mode="widthFix"></image>
+<view class="btn" bindtap="showCro">上传</view>
+<view class="cropper" wx:if="{{isShowCrop}}">
+  <image-cropper id="my-cropper" src="{{src}}" aspectRatio="{{aspectRatio}}" isProportion="{{isProportion}}"
+    quality="{{1}}">
+    <!-- 操作按钮 -->
+    <view style="position: absolute;bottom:30rpx;left:0;width:100%;">
+      <view class="white">裁剪框宽高比值</view>
+    <slider min="0.4" max="3" step="0.1" value="{{aspectRatio}}" show-value="true" style="width:400rpx"
+      bindchange="btn1"></slider>
+    <view class="white">裁剪图片质量</view>
+    <slider min="0.1" max="1" step="0.1" value="{{quality}}" show-value="true" style="width:400rpx" bindchange="btn2">
+    </slider>
+      <view class="btns" style="display:flex;">
+        <view class="btn-item" bindtap="btn3">等比缩放</view>
+        <view class="btn-item" bindtap="btn4">自由缩放</view>
+        <!-- <view class="btn-item">取消</view> -->
+        <view class="btn-item" bindtap="btn5">裁切参数</view>
+        <view class="btn-item" bindtap="btn6">完成</view>
+      </view>
+    </view>
+  </image-cropper>
+</view>
